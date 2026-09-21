@@ -1,4 +1,3 @@
-// ===== БАЗА АВТОМОБІЛІВ =====
 const carDatabase = {
     "Mercedes-Benz": [
         "A-Class", "C-Class", "E-Class", "S-Class",
@@ -29,14 +28,14 @@ const carDatabase = {
     ]
 };
 
-// ===== ЕЛЕМЕНТИ =====
+
 const form = document.getElementById('testDriveForm');
 const recordsList = document.getElementById('recordsList');
 const brandSelect = document.getElementById('brand');
 const modelSelect = document.getElementById('model');
 const dateInput = document.getElementById('date');
 
-// ===== ЗАПОВНЕННЯ БРЕНДІВ =====
+
 Object.keys(carDatabase).forEach(brand => {
     const option = document.createElement('option');
     option.value = brand;
@@ -44,11 +43,10 @@ Object.keys(carDatabase).forEach(brand => {
     brandSelect.appendChild(option);
 });
 
-// ===== ОНОВЛЕННЯ МОДЕЛЕЙ ПРИ ЗМІНІ БРЕНДУ =====
+
 brandSelect.addEventListener('change', () => {
     const brand = brandSelect.value;
 
-    // Очищаємо список моделей
     modelSelect.innerHTML = '';
 
     if (!brand) {
@@ -57,11 +55,11 @@ brandSelect.addEventListener('change', () => {
         return;
     }
 
-    // Активуємо список
+
     modelSelect.disabled = false;
     modelSelect.innerHTML = '<option value="">— Оберіть модель —</option>';
 
-    // Додаємо моделі обраного бренду
+
     carDatabase[brand].forEach(model => {
         const option = document.createElement('option');
         option.value = model;
@@ -70,14 +68,14 @@ brandSelect.addEventListener('change', () => {
     });
 });
 
-// ===== ДАТА ЗА ЗАМОВЧУВАННЯМ — ЗАВТРА =====
+
 const tomorrow = new Date();
 tomorrow.setDate(tomorrow.getDate() + 1);
 const tomorrowISO = tomorrow.toISOString().split('T')[0];
 dateInput.value = tomorrowISO;
 dateInput.min = new Date().toISOString().split('T')[0];
 
-// ===== ФОРМАТУВАННЯ ДАТИ =====
+
 function formatDate(isoDate) {
     const d = new Date(isoDate);
     const day = String(d.getDate()).padStart(2, '0');
@@ -86,7 +84,7 @@ function formatDate(isoDate) {
     return `${day}.${month}.${year}`;
 }
 
-// ===== ДОДАВАННЯ ЗАПИСУ =====
+
 function addRecord(name, phone, brand, model, date) {
     const empty = recordsList.querySelector('.records__empty');
     if (empty) empty.remove();
@@ -117,7 +115,7 @@ function addRecord(name, phone, brand, model, date) {
     recordsList.appendChild(li);
 }
 
-// ===== ВІДПРАВКА ФОРМИ =====
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -135,12 +133,12 @@ form.addEventListener('submit', (e) => {
     addRecord(name, phone, brand, model, date);
     form.reset();
 
-    // Скидаємо селекти
+
     modelSelect.disabled = true;
     modelSelect.innerHTML = '<option value="">— Спочатку оберіть бренд —</option>';
     dateInput.value = tomorrowISO;
 
-    // Плавний скрол до списку
+
     recordsList.scrollIntoView({
         behavior: 'smooth',
         block: 'center'
