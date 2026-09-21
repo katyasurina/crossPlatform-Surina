@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURUM Motors — крос-платформний застосунок</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+    <div class="container">
+        <h1>AURUM Motors</h1>
+        <p>Крос-платформний застосунок преміального автосалону</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="card">
+        <h2>Про застосунок</h2>
+        <p>
+            AURUM Motors — це крос-платформний застосунок преміального автосалону,
+            який працює у браузері на комп'ютерах, планшетах і смартфонах.
+        </p>
+        <p>
+            Інтерфейс створено за допомогою HTML і CSS, а взаємодію з користувачем
+            реалізовано на JavaScript.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Основні функції</h2>
+        <ul class="features">
+            <li>Перегляд каталогу преміальних авто</li>
+            <li>Вибір бренду та моделі з бази</li>
+            <li>Запис на тест-драйв онлайн</li>
+            <li>Керування списком записів</li>
+            <li>Адаптивний інтерфейс</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>Запис на тест-драйв</h2>
+        <form class="form" id="testDriveForm">
+
+            <label>
+                Ваше ім'я
+                <input type="text" id="name" placeholder="Введіть ім'я" required>
+            </label>
+
+            <label>
+                Телефон
+                <input type="tel" id="phone" placeholder="+380 __ ___ __ __" required>
+            </label>
+
+            <label>
+                Бренд
+                <select id="brand" required>
+                    <option value="">— Оберіть бренд —</option>
+                </select>
+            </label>
+
+            <label>
+                Модель
+                <select id="model" required disabled>
+                    <option value="">— Спочатку оберіть бренд —</option>
+                </select>
+            </label>
+
+            <label>
+                Дата тест-драйву
+                <input type="date" id="date" required>
+            </label>
+
+            <button type="submit" class="btn">Записатися</button>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Список записів</h2>
+        <ul class="records" id="recordsList">
+            <li class="records__empty">Записів поки немає</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>Обраний стек технологій</h2>
+        <p>
+            Для цього прикладу використано WebView-підхід, оскільки застосунок реалізовано
+            за допомогою вебтехнологій і він може запускатися у браузері або бути вбудованим
+            у мобільний застосунок через WebView.
+        </p>
+        <table class="stack">
+            <thead>
+            <tr>
+                <th>Компонент</th>
+                <th>Технологія</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td>Структура сторінки</td><td>HTML</td></tr>
+            <tr><td>Оформлення</td><td>CSS</td></tr>
+            <tr><td>Логіка</td><td>JavaScript</td></tr>
+            <tr><td>Платформа запуску</td><td>Браузер / WebView</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>Лабораторна робота 1.2: Основи кросплатформності</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

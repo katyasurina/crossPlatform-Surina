@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f7f8fb;
+    color: #111111;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ХЕДЕР */
+.hero {
+    padding: 110px 20px 90px;
+    text-align: center;
+    background: linear-gradient(180deg, #eef2ff 0%, #f7f8fb 100%);
+    border-bottom: 1px solid #e6e9f2;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: #2b5cff;
+}
+
+.hero h1 {
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: -1.2px;
+    margin-bottom: 14px;
+    color: #0f1e3d;
+}
+
+.hero p {
+    font-size: 16px;
+    color: #6b7280;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+/* КАРТКИ */
+.card {
+    background: #ffffff;
+    border: 1px solid #e6e9f2;
+    border-radius: 6px;
+    padding: 48px 44px;
+    margin: 28px 0;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    animation: fadeUp 0.6s ease both;
+}
+
+.card:hover {
+    border-color: #c7d2fe;
+    box-shadow: 0 12px 32px rgba(43, 92, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.card h2 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #2b5cff;
+    margin-bottom: 24px;
+    position: relative;
+    padding-left: 18px;
+}
+
+.card h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 2px;
+    background: #2b5cff;
+}
+
+.card p {
+    color: #4b5563;
+    font-size: 15px;
+    margin-bottom: 14px;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+/* ФОРМА */
+.form {
+    display: grid;
+    gap: 18px;
+}
+
+.form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+.form input,
+.form select {
+    padding: 13px 16px;
+    border: 1px solid #e6e9f2;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #111;
+    background: #fafbff;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form input:focus,
+.form select:focus {
+    outline: none;
+    border-color: #2b5cff;
+    box-shadow: 0 0 0 3px rgba(43, 92, 255, 0.12);
+}
+
+/* КНОПКА */
+.btn {
+    display: inline-block;
+    background: #2b5cff;
+    color: #ffffff;
+    border: 1px solid #2b5cff;
+    padding: 14px 36px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(43, 92, 255, 0.2);
+}
+
+.btn:hover {
+    background: #0f1e3d;
+    border-color: #0f1e3d;
+    box-shadow: 0 8px 20px rgba(15, 30, 61, 0.25);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* СПИСОК ФУНКЦІЙ */
+.features {
+    list-style: none;
+    border-top: 1px solid #e6e9f2;
+}
+
+.features li {
+    padding: 18px 0;
+    border-bottom: 1px solid #e6e9f2;
+    color: #374151;
+    font-size: 15px;
+    position: relative;
+    padding-left: 32px;
+    transition: color 0.25s ease, padding-left 0.25s ease;
+}
+
+.features li:hover {
+    color: #2b5cff;
+    padding-left: 40px;
+}
+
+.features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 1px;
+    background: #c7d2fe;
+    transition: background 0.25s ease, width 0.25s ease;
+}
+
+.features li:hover::before {
+    background: #2b5cff;
+    width: 22px;
+}
+
+/* СПИСОК ЗАПИСІВ */
+.records {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+}
+
+.records__empty {
+    color: #9ca3af;
+    font-size: 14px;
+    font-style: italic;
+    padding: 16px 0;
+}
+
+.record {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border: 1px solid #e6e9f2;
+    border-left: 3px solid #2b5cff;
+    border-radius: 4px;
+    background: #fafbff;
+    animation: fadeUp 0.4s ease both;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.record:hover {
+    box-shadow: 0 6px 18px rgba(43, 92, 255, 0.1);
+}
+
+.record__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.record__info strong {
+    color: #0f1e3d;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.record__info span {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.record__delete {
+    background: transparent;
+    border: 1px solid #e6e9f2;
+    color: #6b7280;
+    padding: 8px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+
+.record__delete:hover {
+    background: #fee2e2;
+    border-color: #fca5a5;
+    color: #dc2626;
+}
+
+/* ТАБЛИЦЯ */
+.stack {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+}
+
+.stack th {
+    text-align: left;
+    padding: 14px 0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #6b7280;
+    border-bottom: 2px solid #2b5cff;
+}
+
+.stack td {
+    padding: 16px 0;
+    border-bottom: 1px solid #e6e9f2;
+    color: #374151;
+    font-size: 15px;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.stack tr:hover td {
+    background: #f5f7ff;
+    color: #2b5cff;
+}
+
+.stack tr:last-child td {
+    border-bottom: none;
+}
+
+/* ФУТЕР */
+.footer {
+    text-align: center;
+    padding: 48px 20px;
+    color: #9ca3af;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-top: 1px solid #e6e9f2;
+    margin-top: 40px;
+    background: #f7f8fb;
+}
+
+/* АНІМАЦІЯ */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.15s; }
+.card:nth-child(3) { animation-delay: 0.25s; }
+.card:nth-child(4) { animation-delay: 0.35s; }
+.card:nth-child(5) { animation-delay: 0.45s; }
+
+/* АДАПТИВНІСТЬ */
+@media (max-width: 600px) {
+    .hero {
+        padding: 72px 16px 56px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+        letter-spacing: -0.6px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 32px 22px;
+        margin: 16px 0;
+    }
+
+    .card h2 {
+        font-size: 12px;
+        letter-spacing: 2px;
+        margin-bottom: 18px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 14px 20px;
+    }
+
+    .record {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .record__delete {
+        width: 100%;
+    }
+
+    .stack th,
+    .stack td {
+        padding: 12px 0;
+        font-size: 13px;
+    }
+
+    .features li {
+        padding: 14px 0 14px 28px;
+        font-size: 14px;
+    }
+}
