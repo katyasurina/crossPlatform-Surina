@@ -1,0 +1,32 @@
+### 1. Отримати всі авто (порожній масив, бо база ще порожня)
+GET http://localhost:3000/api/cars
+
+### 2. Створити нове авто
+POST http://localhost:3000/api/cars
+Content-Type: application/json
+
+{
+  "brand": "Toyota",
+  "model": "Camry",
+  "year": 2020,
+  "price": 25000,
+  "description": "Стан ідеальний, пробіг 45000 км"
+}
+
+### 3. Отримати авто за id (скопіюйте _id з попередньої відповіді)
+GET http://localhost:3000/api/cars/6abbaf1875e074f198627e7f
+
+### 4. Оновити авто (підставте реальний id)
+PUT http://localhost:3000/api/cars/6abbaf1875e074f198627e7f
+Content-Type: application/json
+
+{
+  "brand": "Toyota",
+  "model": "Camry",
+  "year": 2021,
+  "price": 27000,
+  "description": "Оновлено: пробіг 50000 км"
+}
+
+### 5. Видалити авто (підставте реальний id)
+DELETE http://localhost:3000/api/cars/6abbaf1875e074f198627e7f
