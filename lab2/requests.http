@@ -14,10 +14,10 @@ Content-Type: application/json
 }
 
 ### 3. Отримати авто за id (скопіюйте _id з попередньої відповіді)
-GET http://localhost:3000/api/cars/6abbaf1875e074f198627e7f
+GET http://localhost:3000/api/cars/6abf7966214e8481047db719
 
 ### 4. Оновити авто (підставте реальний id)
-PUT http://localhost:3000/api/cars/6abbaf1875e074f198627e7f
+PUT http://localhost:3000/api/cars/6abf7966214e8481047db719
 Content-Type: application/json
 
 {
@@ -29,4 +29,4 @@ Content-Type: application/json
 }
 
 ### 5. Видалити авто (підставте реальний id)
-DELETE http://localhost:3000/api/cars/6abbaf1875e074f198627e7f
+DELETE http://localhost:3000/api/cars/6abf7966214e8481047db719
