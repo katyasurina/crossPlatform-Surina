@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self';">
+    <title>drivo Desktop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="login-screen" class="screen active">
+    <div class="login-wrapper">
+        <div class="login-box">
+            <h1>drivo</h1>
+            <p>Оберіть роль для входу</p>
+            <button class="btn-primary" id="btn-login-manager">Я Адміністратор</button>
+            <button class="btn-secondary" id="btn-login-client">Я Покупець</button>
+        </div>
+    </div>
+</div>
+
+<div id="manager-screen" class="screen">
+    <header>
+        <h2>Панель адміністратора</h2>
+        <button class="btn-logout" id="btn-logout-manager">Вийти</button>
+    </header>
+
+    <div class="card">
+        <h3>Додати авто в каталог</h3>
+        <div class="form-group">
+            <input type="text" id="carBrand" placeholder="Марка та модель">
+            <input type="number" id="carPrice" placeholder="Ціна ($)">
+            <input type="number" id="carYear" placeholder="Рік">
+            <button class="btn-primary" id="btn-add-car">Додати авто</button>
+        </div>
+        <p id="manager-msg" class="message"></p>
+    </div>
+
+    <div class="card">
+        <h3>Каталог авто (<span id="manager-cars-count">0</span>)</h3>
+        <div id="manager-cars-list" class="cars-grid"></div>
+    </div>
+
+    <div class="card">
+        <h3>Вхідні замовлення (<span id="manager-orders-count">0</span>)</h3>
+        <div id="manager-orders-list" class="orders-list"></div>
+    </div>
+</div>
+
+<div id="client-screen" class="screen">
+    <header>
+        <h2>Каталог авто</h2>
+        <button class="btn-logout" id="btn-logout-client">Вийти</button>
+    </header>
+
+    <div class="card">
+        <h3>Доступні автомобілі</h3>
+        <div id="client-cars-list" class="cars-grid"></div>
+    </div>
+
+    <div class="card">
+        <h3>Мої замовлення (<span id="client-orders-count">0</span>)</h3>
+        <div id="client-orders-list" class="orders-list"></div>
+    </div>
+</div>
+
+<!-- ВАЖЛИВО: Це вікно має бути тут, перед закриттям body -->
+<div id="buy-modal" class="modal-overlay">
+    <div class="modal-box">
+        <h3>Оформлення замовлення</h3>
+        <p id="modal-car-name" style="margin-bottom: 15px; color: #64748B;"></p>
+        <input type="text" id="modal-client-name" placeholder="Введіть ваше ПІБ">
+        <div class="modal-buttons">
+            <button class="btn-secondary" id="btn-modal-cancel">Скасувати</button>
+            <button class="btn-primary" id="btn-modal-confirm">Підтвердити</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
