@@ -1,0 +1,13 @@
+{
+  "name": "drivo-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "npm test --workspaces --if-present",
+    "start:web": "npm start -w drivo-web",
+    "start:desktop": "npm start -w drivo-desktop-client"
+  }
+}
