@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { LocalStorageAdapter } from '../localStorageAdapter.js';
+import { DrivoService } from '@drivo/core';
 
 const createMockStorage = () => {
     const store = {};
@@ -36,4 +37,34 @@ test('LocalStorage: пошкоджений JSON не ламає застосун
     const data = await adapter.load();
 
     assert.equal(data.cars.length, 10);
+});
+
+test('LocalStorage: робота разом із сервісом (додавання авто)', async () => {
+    const mockStorage = {
+        getItem: () => null,
+        setItem: () => {}
+    };
+    const adapter = new LocalStorageAdapter(mockStorage);
+    const service = new DrivoService(adapter);
+
+    const result = await service.addCar('Test Car', 10000, 2024);
+    assert.equal(result.ok, true);
+});
+
+test('LocalStorage: збереження замовлень', async () => {
+    // Створюємо справжнє фейкове сховище, яке тримає дані в пам'яті
+    const memory = {};
+    const mockStorage = {
+        getItem: (key) => memory[key] || null,
+        setItem: (key, value) => { memory[key] = value; }
+    };
+
+    const adapter = new LocalStorageAdapter(mockStorage);
+    const testData = { cars: [], orders: [{ id: '1', client: 'Іван' }] };
+
+    await adapter.save(testData);
+    const loaded = await adapter.load();
+
+    assert.equal(loaded.orders.length, 1);
+    assert.equal(loaded.orders[0].client, 'Іван');
 });
