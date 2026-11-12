@@ -1,0 +1,15 @@
+* [33m060d15d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m lab3: GraphQL API автосалону на Apollo Server
+[31m|[m * [33mde830d8[m[33m ([m[1;31morigin/docs/tspp-lab4-git-github[m[33m, [m[1;32mdocs/tspp-lab4-git-github[m[33m)[m lab3: add package.json
+[31m|[m * [33m29fbbbe[m lab3: GraphQL API автосалону
+[31m|[m * [33m65b9ac0[m docs: add UX/UI mockups for all key screens
+[31m|[m * [33m2268257[m docs: add UX/UI wireframes for all key screens
+[31m|[m * [33ma01bc7b[m docs: add architecture and ER diagrams with rationale
+[31m|[m[31m/[m  
+* [33m661bc77[m chore: add .gitignore for node_modules and .env
+* [33m0d43cef[m Додала index.html
+* [33m2bf5f89[m Перейменувала папку
+* [33m7ce73b8[m Лабораторна робота №2: серверна частина (автосалон)
+* [33m157c9b9[m removed one li
+* [33madc0769[m 1
+* [33m8fe4d16[m Initial commit
+* [33m8df86e8[m 1
