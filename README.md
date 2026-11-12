@@ -6,11 +6,11 @@
 
 | Рівень | Технології | Де реалізовано |
 |---|---|---|
-| 1. Платформи | Браузер (WebView), iOS / Android (Expo Go), Windows / macOS / Linux | [`packages/web`](packages/web), [`packages/desktop`](packages/desktop) <!-- ПЕРЕВІРТЕ ШЛЯХ до мобільної теки --> |
-| 2. Клієнтські технології | HTML/CSS/JS, React + Vite + Tailwind CSS, React Native + Expo, Electron (IPC, preload) | [`packages/web`](packages/web), [`packages/desktop`](packages/desktop), [`drivo-mobile`](drivo-mobile) <!-- ПЕРЕВІРТЕ ШЛЯХ --> |
-| 3. Спільний код | `@drivo/core` (валідація, `DrivoService`), адаптери сховища, npm workspaces, `node:test` | [`packages/core`](packages/core) |
-| 4. Сервер і API | Node.js + Express (REST), Apollo Server (GraphQL + JWT), `server.js` | [`graphql-auth-lab3`](graphql-auth-lab3) <!-- ПЕРЕВІРТЕ ШЛЯХ; додайте теку REST API з ЛР №2 -->, [`packages/web/server.js`](packages/web/server.js) |
-| 5. База даних | MongoDB Atlas + Mongoose, localStorage, файл `drivo.json`, in-memory | [`packages/web/localStorageAdapter.js`](packages/web/localStorageAdapter.js), [`packages/desktop/fileStorageAdapter.js`](packages/desktop/fileStorageAdapter.js) |
+| 1. Платформи | Браузер (WebView), iOS / Android (Expo Go), Windows / macOS / Linux | [`lab1`](lab1), [`drivo-spa`](drivo-spa), [`drivo-mobile`](drivo-mobile), [`drivo-desktop`](drivo-desktop) |
+| 2. Клієнтські технології | HTML/CSS/JS, React + Vite + Tailwind CSS, React Native + Expo, Electron (IPC, preload) | [`lab1`](lab1), [`drivo-spa`](drivo-spa), [`drivo-mobile`](drivo-mobile), [`drivo-desktop`](drivo-desktop), [`drivo-monorepo/packages/web`](drivo-monorepo/packages/web), [`drivo-monorepo/packages/desktop`](drivo-monorepo/packages/desktop) |
+| 3. Спільний код | `@drivo/core` (валідація, `DrivoService`), адаптери сховища, npm workspaces, `node:test` | [`drivo-monorepo/packages/core`](drivo-monorepo/packages/core), [`drivo-monorepo`](drivo-monorepo/) |
+| 4. Сервер і API | Node.js + Express (REST), Apollo Server (GraphQL + JWT), `server.js` | [`lab2`](lab2), [`graphql-auth-lab3`](graphql-auth-lab3), [`server.js`](drivo-monorepo/packages/web/server.js) |
+| 5. База даних | MongoDB Atlas + Mongoose, localStorage, файл `drivo.json`, in-memory | [`lab2`](lab2), [`localStorageAdapter.js`](drivo-monorepo/packages/web/localStorageAdapter.js), [`fileStorageAdapter.js`](drivo-monorepo/packages/desktop/fileStorageAdapter.js) |
 
 ### Історія проєкту
 
@@ -34,6 +34,7 @@
 ### Запуск
 
 ```bash
+cd drivo-monorepo
 npm install
 npm run start:web      # веб-клієнт, http://localhost:3000
 npm run start:desktop  # Electron-клієнт
